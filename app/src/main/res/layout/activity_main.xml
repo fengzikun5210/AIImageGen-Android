@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F19"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AI Image Generator"
+            android:textColor="#FFB43C"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ModelScope API  +  Pollinations AI (Free)"
+            android:textColor="#828296"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Mode Selector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="API Mode:"
+            android:textColor="#C8CAD2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <Spinner
+            android:id="@+id/spMode"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#191925"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- API Key Section -->
+        <TextView
+            android:id="@+id/tvApiKeyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ModelScope Access Token:"
+            android:textColor="#C8CAD2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etApiKey"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="ms-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            android:textColorHint="#555570"
+            android:textColor="#DCDCE6"
+            android:textSize="12sp"
+            android:background="#191925"
+            android:padding="8dp"
+            android:inputType="text"
+            android:visibility="gone"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/tvApiKeyHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get token: modelscope.cn → Settings → Access Token"
+            android:textColor="#5A5A70"
+            android:textSize="10sp"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Model -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model:"
+            android:textColor="#C8CAD2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <Spinner
+            android:id="@+id/spModel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#191925"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Size -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size:"
+            android:textColor="#C8CAD2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <Spinner
+            android:id="@+id/spSize"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#191925"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Prompt -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prompt:"
+            android:textColor="#C8CAD2"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/etPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Describe the image you want to generate..."
+            android:textColorHint="#555570"
+            android:textColor="#DCDCE6"
+            android:textSize="14sp"
+            android:background="#191925"
+            android:padding="10dp"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Generate Button -->
+        <Button
+            android:id="@+id/btnGenerate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="GENERATE"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="#00B478"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Progress -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="#00B478"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Preview -->
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:scaleType="fitCenter"
+            android:background="#191925"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready. Select mode and enter prompt."
+            android:textColor="#828296"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+</ScrollView>
