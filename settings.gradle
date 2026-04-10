@@ -1,0 +1,2 @@
+rootProject.name = "AIImageGenApp"
+include ':app'
